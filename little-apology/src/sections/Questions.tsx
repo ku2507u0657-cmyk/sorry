@@ -184,7 +184,7 @@ export function Questions() {
           <button
             type="button"
             onClick={() => scrollToId("letter")}
-            className="mt-10 min-h-11 px-4 text-sm text-ivory/55 transition-colors duration-300 hover:text-ivory focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ivory"
+            className="mt-10 min-h-11 px-4 text-sm text-ivory/65 transition-colors duration-300 hover:text-ivory focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ivory"
           >
             {skip}
           </button>

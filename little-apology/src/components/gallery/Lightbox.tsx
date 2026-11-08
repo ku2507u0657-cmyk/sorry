@@ -147,7 +147,7 @@ export function Lightbox({ photos, index, onChange, onClose }: LightboxProps) {
       <div className="mx-auto w-full max-w-xl text-center">
         <div aria-live="polite" className="min-h-14">
           {caption ? <p className="font-display text-2xl italic leading-snug">{caption}</p> : null}
-          {photo.date ? <p className="mt-1 text-sm text-ivory/60">{photo.date}</p> : null}
+          {photo.date ? <p className="mt-1 text-sm text-ivory/70">{photo.date}</p> : null}
         </div>
         {count > 1 ? (
           <div className="mt-4 flex items-center justify-center gap-6">

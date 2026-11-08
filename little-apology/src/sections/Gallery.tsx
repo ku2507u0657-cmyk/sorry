@@ -51,7 +51,7 @@ function GalleryPhoto({ photo, index, onOpen }: GalleryPhotoProps) {
       {caption || photo.date ? (
         <figcaption className="mt-3 px-1">
           {caption ? <p className="font-display text-xl italic leading-snug text-burgundy">{caption}</p> : null}
-          {photo.date ? <p className="mt-0.5 text-sm text-ink/55">{photo.date}</p> : null}
+          {photo.date ? <p className="mt-0.5 text-sm text-ink/70">{photo.date}</p> : null}
         </figcaption>
       ) : null}
     </figure>

@@ -19,7 +19,7 @@ function Envelope({ opening, flapBack, hint, onOpen }: EnvelopeProps) {
   return (
     <motion.div
       exit={{ opacity: 0, y: 24, scale: 0.96, transition: { duration: 0.6, ease } }}
-      className="mx-auto w-[min(88vw,26rem)] pt-16"
+      className="mx-auto w-[min(88vw,26rem)] pt-28 sm:pt-32"
     >
       <button
         type="button"
@@ -64,7 +64,7 @@ function Envelope({ opening, flapBack, hint, onOpen }: EnvelopeProps) {
           <Heart size={18} aria-hidden="true" />
         </motion.span>
       </button>
-      <p className="mt-10 text-center text-sm text-burgundy/60">{hint}</p>
+      <p className="mt-10 text-center text-sm text-burgundy/80">{hint}</p>
     </motion.div>
   );
 }
@@ -101,8 +101,8 @@ export function Letter() {
         <SplitText text={smart(heading)} trigger="view" stagger={0.04} blur={false} />
       </h2>
 
-      <div className="mt-12 sm:mt-16">
-        <AnimatePresence mode="wait">
+      <div className="relative mt-12 sm:mt-16">
+        <AnimatePresence mode="popLayout">
           {stage !== "open" ? (
             <Envelope
               key="envelope"
