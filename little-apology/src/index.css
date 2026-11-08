@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #faf5ec;
+  --color-champagne: #ead9be;
+  --color-blush: #e8c9c2;
+  --color-burgundy: #5e1a2b;
+  --color-wine: #2e0e17;
+  --color-gold: #b98f5a;
+  --color-ink: #2b1b1e;
+
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-hand: "Caveat Variable", "Segoe Script", cursive;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html.is-locked {
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.17 0 0 0 0 0.1 0 0 0 0 0.11 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  will-change: transform;
+}
+
+.orb-a {
+  width: 90vmax;
+  height: 90vmax;
+  top: -35vmax;
+  left: -30vmax;
+  background: radial-gradient(circle, rgba(232, 201, 194, 0.75) 0%, transparent 62%);
+  animation: drift-a 32s ease-in-out infinite;
+}
+
+.orb-b {
+  width: 80vmax;
+  height: 80vmax;
+  bottom: -35vmax;
+  right: -25vmax;
+  background: radial-gradient(circle, rgba(234, 217, 190, 0.95) 0%, transparent 62%);
+  animation: drift-b 40s ease-in-out infinite;
+}
+
+.orb-c {
+  width: 60vmax;
+  height: 60vmax;
+  top: 25%;
+  left: 30%;
+  background: radial-gradient(circle, rgba(94, 26, 43, 0.12) 0%, transparent 64%);
+  animation: drift-c 48s ease-in-out infinite;
+}
+
+@keyframes drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(12%, 10%, 0) scale(1.12);
+  }
+}
+
+@keyframes drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-14%, -8%, 0) scale(1.1);
+  }
+}
+
+@keyframes drift-c {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-10%, 12%, 0) scale(1.18);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb {
+    animation: none;
+  }
+}
+
+.letter-lines {
+  --rule: 2.4rem;
+  padding-block: calc(var(--rule) * 2);
+  background-image: linear-gradient(
+    transparent calc(var(--rule) - 1px),
+    rgba(185, 143, 90, 0.28) calc(var(--rule) - 1px)
+  );
+  background-size: 100% var(--rule);
+}
+
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  will-change: transform;
+}
+
+.glow-a {
+  width: 80vmax;
+  height: 80vmax;
+  top: -30vmax;
+  left: -25vmax;
+  background: radial-gradient(circle, rgba(185, 143, 90, 0.2) 0%, transparent 62%);
+  animation: drift-a 36s ease-in-out infinite;
+}
+
+.glow-b {
+  width: 90vmax;
+  height: 90vmax;
+  bottom: -40vmax;
+  right: -30vmax;
+  background: radial-gradient(circle, rgba(94, 26, 43, 0.75) 0%, transparent 62%);
+  animation: drift-b 44s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow {
+    animation: none;
+  }
+}
